@@ -25,7 +25,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback' // this needs to be authorised in the google dev console
+      callbackURL: '/auth/google/callback', // this needs to be authorised in the google dev console
+      proxy: true
     },
     // Call back function after receiving trading code for user information
     (accessToken, refreshToken, profile, done) => {
