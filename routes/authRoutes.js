@@ -9,19 +9,22 @@ module.exports = app => {
     })
   );
 
-  // After user authenticate, google will supply a code and redirect user to callback route after authentication
+  // After user authenticate, google will redirect user to callback route after authentication and supply a unique code
   app.get(
     '/auth/google/callback',
     // Passport to receive the code and trade for user information (ie access token, profile ...)
-    passport.authenticate('google')
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    }
   );
 
   app.get('/api/logout', (req, res) => {
     req.logout(); // kills the cookie that contain id
-    res.send(req.user);
+    res.redirect('/');
   });
 
   app.get('/api/current_user', (req, res) => {
-    res.send(req.session); // passport automatically attaches user/ logout to req for us to use
+    res.send(req.user); // passport automatically attaches user/logout to req for us to use
   });
 };

@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/App';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers/index';
+import { createStore, applyMiddleware } from 'redux';
+import reduxThunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import 'materialize-css/dist/css/materialize.min.css';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+const store = createStore(rootReducer, {}, applyMiddleware(reduxThunk));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
+console.log('STRIPE KEY IS', process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+console.log('ENVIRONMENT IS', process.env.NODE_ENV);
+
 serviceWorker.unregister();
