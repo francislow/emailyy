@@ -4,6 +4,8 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
+require('./models/User');
+require('./models/Survey');
 
 // Generate a application that runs express
 const app = express();
@@ -29,6 +31,7 @@ app.use(passport.session());
 // Set up route handling
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 if (process.env.NODE_ENV === 'production') {
   // Express will serve files like main.css main.js
   app.use(express.static('client/build'));

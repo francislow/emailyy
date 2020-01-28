@@ -6,7 +6,7 @@ import * as actions from '../actions/index';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import SurveyNew from './SurveyNew';
+import SurveyNew from './surveys/SurveyNew';
 
 function App(props) {
   useEffect(() => {

@@ -1,7 +1,9 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require('passport');
+const mongoose = require('mongoose');
 const keys = require('../config/keys');
-const User = require('../models/User');
+
+const User = mongoose.model('users');
 
 // Serialise user = change user object into a unique id (mongo id) then continue (done)
 // The purpose of this method is to let passport serialise a specified user given the specified user

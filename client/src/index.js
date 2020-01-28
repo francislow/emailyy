@@ -9,6 +9,9 @@ import * as serviceWorker from './serviceWorker';
 
 import 'materialize-css/dist/css/materialize.min.css';
 
+import axios from 'axios';
+window.axios = axios;
+
 const store = createStore(rootReducer, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
@@ -17,8 +20,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-console.log('STRIPE KEY IS', process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-console.log('ENVIRONMENT IS', process.env.NODE_ENV);
 
 serviceWorker.unregister();
