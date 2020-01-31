@@ -1,6 +1,6 @@
 # Emailyy
 
-This project was built part of a ReactJS + Redux course by Stephen Grider
+This project was built part of a [Full stack web dev course by Stephen Grider](https://www.udemy.com/course/node-with-react-fullstack-web-development/)
 
 ### Features
 - Log in using Google OAuth
