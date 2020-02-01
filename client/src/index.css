@@ -1,0 +1,36 @@
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.wrapper-model-box {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(44, 44, 44, 0.84);
+}
+
+.wrapper-model-box .content {
+  box-shadow: 3px 3px #ff6161;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  height: 85%;
+  width: 350px;
+  max-width: 90%;
+  background-color: white;
+  font-family: 'Raleway';
+
+  display: flex;
+  flex-direction: column;
+}

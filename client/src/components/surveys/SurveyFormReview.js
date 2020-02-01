@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import formFields from './formFields';
 import * as actions from '../../actions';
+import ConfirmationModelBox from "./ComfirmationModelBox"
 
 // Shows user a form for userinput
 function SurveyFormReview({ setShowReview, formValues, submitSurvey, history }) {
+  const [modelVisibility, setModelVisiblility] = useState("invisible");
+
   function onCancel() {
     setShowReview(false);
   }
 
   function onSend() {
-    submitSurvey(formValues, history);
+    submitSurvey(formValues, history, setModelVisiblility);
   }
 
   function renderReviewComponents() {
@@ -28,6 +31,7 @@ function SurveyFormReview({ setShowReview, formValues, submitSurvey, history }) 
   return (
     <div>
       <h2>Please confirm your entries:</h2>
+      
       {renderReviewComponents()}
       <button
         onClick={onCancel}
@@ -37,6 +41,10 @@ function SurveyFormReview({ setShowReview, formValues, submitSurvey, history }) 
       <button onClick={onSend} className='green btn-flat right white-text'>
         Submit<i className='material-icons right'>email</i>
       </button>
+      <ConfirmationModelBox
+        setVisibility={setModelVisiblility}
+        visibility={modelVisibility}
+      />
     </div>
   );
 }

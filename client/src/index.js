@@ -8,6 +8,7 @@ import reduxThunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 
 import 'materialize-css/dist/css/materialize.min.css';
+import './index.css'
 
 import axios from 'axios';
 window.axios = axios;

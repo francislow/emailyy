@@ -18,14 +18,15 @@ export function handleToken(token) {
   };
 }
 
-export function submitSurvey(values, history) {
+export function submitSurvey(values, history, setModelVisibility) {
   return function(dispatch) {
     axios
       .post('/api/surveys', values)
       .then(res => {
         history.push('/surveys');
         dispatch({ type: FETCH_USER, payload: res.data });
-      });
+      })
+      .catch(() => setModelVisibility("visible"))
   };
 }
 
