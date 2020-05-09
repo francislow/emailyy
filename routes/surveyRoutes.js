@@ -9,12 +9,24 @@ const Path = require('path-parser');
 const _ = require('lodash');
 
 module.exports = app => {
+  // Get all surveys of a user
   app.get('/api/surveys', requireLogin, async (req, res) => {
-    const surveys = await Survey.find({ _user: req.user.id })
-      .select({ recipients: false });
+    const surveys = await Survey.find({ _user: req.user.id }).select({
+      recipients: false
+    });
     res.send(surveys);
   });
 
+  // Remove a survey
+  app.delete('/api/survey/delete/:surveyId', requireLogin,  async (req, res) => {
+    const surveyId = req.params.surveyId;
+    console.log("ran delete route", surveyId)
+
+    await Survey.deleteOne({_id: surveyId});
+    res.send("survey deleted");
+  });
+
+  // Post a new survey
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body; // recipients is a string that has all emails separated by commas
 

@@ -12,7 +12,7 @@ function Payment(props) {
       token={token => props.handleToken(token)} // Callback function after receiving token from stripe
       stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
     >
-      <button className="btn">Add Credits</button>
+      <button style={{margin: '0 20px', fontSize: "8px", lineHeight: "5px"}} className="btn red" ><b>Add Credits</b></button>
     </StripeCheckout>
   );
 }

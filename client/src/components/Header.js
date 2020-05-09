@@ -10,23 +10,27 @@ function Header(props) {
       case null:
         return;
       case false:
-        return <li><a href='/auth/google'>Sign in to google!</a></li>;
+      return [
+        <li><Link to="/surveys">Get Started</Link></li>,
+        <li><a href='/auth/google' style={{margin: '0 10px', color: "black"}}>Login</a></li>
+      ];
       default:
         return [
           <li key="1"><Payment /></li>,
-          <li key="2" style={{margin: '0 10px'}}>Credits: {props.authReducer.credits}</li>,
-          <li key="3"><a href='/api/logout'>Logout</a></li>
+          <li key="2" style={{margin: '0 10px', color: "black"}}><b>Credits: {props.authReducer.credits}</b></li>,
+          <li key="3"><a style={{margin: '0 10px'}} href='/api/logout'>Logout</a></li>
         ];
     }
   }
   return (
     <nav>
-      <div className='nav-wrapper'>
+      <div className='nav-wrapper' style={{backgroundColor: "#F78D8D"}}>
         <Link 
+          style={{marginLeft: '30px', fontFamily: "Shadows Into Light"}} 
           to={props.authReducer ? '/surveys' : '/'} 
           className='left brand-logo'
         >
-          Emailyy
+          EMAILY
         </Link>
         <ul className='right'>
           {renderContent()}

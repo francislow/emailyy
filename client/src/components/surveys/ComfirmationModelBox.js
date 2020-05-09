@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProjectModelBox(props) {
+function ConfirmationModelBox(props) {
   return (
     // Model content
     <div className={`wrapper-model-box ${props.visibility}`}>
@@ -12,4 +12,4 @@ function ProjectModelBox(props) {
   );
 }
 
-export default ProjectModelBox;
+export default ConfirmationModelBox;
