@@ -30,16 +30,17 @@ function SurveyFormReview({ setShowReview, formValues, submitSurvey, history }) 
 
   return (
     <div>
-      <h2>Please confirm your entries:</h2>
+      <h5>Please confirm your entries:</h5>
       
       {renderReviewComponents()}
-      <button
-        onClick={onCancel}
-        className='yellow darken-3 btn-flat white-text'>
+      <button onClick={onCancel} className='red lighten-4 btn black-text'>
         Back
+        <i className='material-icons right'>arrow_back</i>
       </button>
-      <button onClick={onSend} className='green btn-flat right white-text'>
-        Submit<i className='material-icons right'>email</i>
+      
+      <button onClick={onSend} className='red lighten-1 btn right white-text'>
+        Submit
+        <i className='material-icons right'>email</i>
       </button>
       <ConfirmationModelBox
         setVisibility={setModelVisiblility}
