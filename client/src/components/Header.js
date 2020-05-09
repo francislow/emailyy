@@ -17,7 +17,7 @@ function Header(props) {
       default:
         return [
           <li key="1"><Payment /></li>,
-          <li key="2" style={{margin: '0 10px', color: "black"}}><b>Credits: {props.authReducer.credits}</b></li>,
+          <li key="2" style={{margin: '0 10px', color: "white"}}><b>Credits: {props.authReducer.credits}</b></li>,
           <li key="3"><a style={{margin: '0 10px'}} href='/api/logout'>Logout</a></li>
         ];
     }

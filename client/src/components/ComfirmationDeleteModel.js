@@ -7,11 +7,15 @@ function ComfirmationDeleteModel(props) {
   }
   return (
     // Model content
-    <div className={`wrapper-model-box ${props.visibility}`}>
+    <div className={`wrapper-delete-box ${props.visibility}`}>
       <div className="content">
-        <p>Are you sure you want to delete survey? This step CANNOT be undone.</p>
-        <button onClick={() => props.setVisibility('invisible')}>Cancel</button>
-        <button onClick={() => handleDelete()}>Ok</button>
+        <i className="material-icons error_icon">error_outline</i>
+        <p>Are you sure you want to delete this survey <u>permanently?</u></p>
+
+        <div>
+          <button class="cancel_btn" onClick={() => props.setVisibility('invisible')}>Cancel</button>
+          <button class="delete_btn" onClick={() => handleDelete()}>Delete</button>
+        </div>
       </div>
     </div>
   );
