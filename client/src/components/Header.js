@@ -11,8 +11,8 @@ function Header(props) {
         return;
       case false:
       return [
-        <li><Link to="/surveys">Get Started</Link></li>,
-        <li><a href='/auth/google' style={{margin: '0 10px', color: "black"}}>Login</a></li>
+        // <li><Link to="/get_started">Get Started</Link></li>,
+        <li><a href='/auth/google' style={{margin: '0 10px', color: "black"}}>LOGIN</a></li>
       ];
       default:
         return [

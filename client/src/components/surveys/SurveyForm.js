@@ -1,5 +1,5 @@
 import React from 'react';
-import { reduxForm, Field, Fields } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
 import validateEmails from '../../utils/validateEmails';
@@ -22,13 +22,16 @@ function SurveyForm(props) {
 
   return (
     <form onSubmit={props.handleSubmit(() => props.setShowReview(true))}>
-      {renderAllFields()}
-      <Link to='/surveys' className='red btn-flat white-text'>
+      <div style={{marginTop: "35px"}}>
+        {renderAllFields()}
+      </div>
+      <Link to='/surveys' className='red lighten-4 btn black-text'>
         Cancel
+        <i className='material-icons right'>close</i>
       </Link>
-      <button className='teal btn-flat right white-text' type='submit'>
+      <button className='red lighten-2 btn right white-text' type='submit'>
         Next
-        <i className='material-icons right'>done</i>
+        <i className='material-icons right'>arrow_forward</i>
       </button>
     </form>
   );
@@ -42,16 +45,16 @@ function validateForm(values) {
   errors.recipients = validateEmails(values.recipients || '');
 
   if (!values.title) {
-    errors.title = 'You must provide a title!';
+    errors.title = 'You must provide a title';
   }
   if (!values.subject) {
-    errors.subject = 'You must provide a subject!';
+    errors.subject = 'You must provide a subject';
   }
   if (!values.body) {
-    errors.body = 'You must provide a body!';
+    errors.body = 'You must provide a body';
   }
   if (!values.recipients) {
-    errors.recipients = 'You must provide at least 1 email!';
+    errors.recipients = 'You must provide at least 1 email';
   }
 
   // Errors is empty means redux-form is all good

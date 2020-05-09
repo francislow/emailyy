@@ -7,8 +7,8 @@ function Payment(props) {
   return (
     <StripeCheckout
       name="Emailyy"
-      description="$5 for 5 email credits"
-      amount={500}
+      description="10 dollars for 10 email credits"
+      amount={1000}
       token={token => props.handleToken(token)} // Callback function after receiving token from stripe
       stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
     >

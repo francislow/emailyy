@@ -30,7 +30,7 @@ function SurveyList({ surveys, fetchSurveys, deleteSurvey }) {
             <div className='card-action'>
               <a>Yes: {survey.yes}</a>
               <a>No: {survey.no}</a>
-              <a className="right" onClick={() =>  {setSurveyToDelete(survey._id); setModelVisiblility("visible");}}>
+              <a style={{cursor:"pointer"}} className="right" onClick={() =>  {setSurveyToDelete(survey._id); setModelVisiblility("visible");}}>
                 <i className='material-icons'>close</i>
               </a>
             </div>
