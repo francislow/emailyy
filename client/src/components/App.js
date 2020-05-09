@@ -7,6 +7,7 @@ import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
+import GetStartedPage from './GetStartedPage';
 
 function App(props) {
   useEffect(() => {
@@ -18,6 +19,7 @@ function App(props) {
       <Router>
         <Header />
         <Route exact path='/' component={Landing} />
+        {/* <Route exact path='/get_started' component={GetStartedPage} /> */}
         <Route exact path='/surveys' component={Dashboard} />
         <Route exact path='/surveys/new' component={SurveyNew} />
       </Router>
