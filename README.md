@@ -1,7 +1,4 @@
-<h1 align="center">Emailyy </h1>
-<p align="center">
-  <a href = "https://reactjs.org"><img src="https://img.shields.io/badge/Made with-React-23425C?logo=react"></a>
-</p>
+<h1>Emailyy </h1>
 
 A web app that allows users to mass send and track responses of survey emails.<br>
 Built using React, Express, Node.js, Redux, Stripe and Passport Api<br>
