@@ -1,4 +1,4 @@
-<h1>Emailyy </h1>
+<h1>Emaily</h1>
 
 ## Description
 A web app that allows users to mass send and track responses of survey emails.<br>
