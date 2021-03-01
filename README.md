@@ -3,7 +3,7 @@
 ## Description
 A web app that allows users to mass send and track responses of survey emails.<br>
 - Built using React, Express, Node.js, Redux, Stripe and Passport Api<br>
-- This site is hosted at https://murmuring-thicket-55187.herokuapp.com/
+- This site is hosted at https://murmuring-thicket-55187.herokuapp.com/ (It may take a 10-20s to load as website is hosted in a free tier account)
 
 
 ## Preview
